@@ -1,12 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var path = require('path');
 
 // Import Routes
 var routes = require('./routes/routes.js');
-
-// Article Schema
-var Article = require('./models/History');
 
 // Express
 var app = express();
@@ -40,6 +38,6 @@ mongoose.connect(db, function(error) {
 });
 
 // Start Express
-app.listen(port, function(err) {
-  console.log('Listening on port ' + port);
+app.listen(PORT, function(err) {
+  console.log('Listening on port ' + PORT);
 });
