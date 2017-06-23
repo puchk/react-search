@@ -1,6 +1,6 @@
 module.exports = {
 
-  entry: "./app/app.js",
+  entry: "./app/index.js",
 
   output: {
     filename: "dist/bundle.js"
@@ -11,9 +11,11 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: /app/,
-        loader: "babel",
+        loader: "babel-loader",
         query: {
           presets: ["react", "es2015"],
+          plugins: ['transform-class-properties']
+
         }
       }
     ]
